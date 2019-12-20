@@ -1,6 +1,6 @@
-##Code Generator for Redux##
+## Code Generator for Redux ##
 
-##Prerequsites##
+## Prerequsites ##
 
 ```
 npm install -g  elder-redux-gen
@@ -10,7 +10,7 @@ npm install -g  elder-redux-gen
 npm install redux react-redux redux-thunk
 ```
 
-##Instructions##
+## Instructions ##
 
 1.  cd into the directory you want to create the store in
 2.  create **store.schema.json** file in the directory, each key represents a module, eg.
