@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"bin": {
-		"redux-store-codegen": "./script.js"
+		"create-redux-store": "cli.js"
 	},
 	"author": "Jabir Barber",
 	"license": "ISC"
