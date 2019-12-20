@@ -1,11 +1,14 @@
 {
-  "name": "redux-store-codegen",
-  "version": "1.0.0",
-  "description": "An easy code generator to auto generate actions/thunk-action-creators/reducers/selectors from a simple store schema definition",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jabir Barber",
-  "license": "ISC"
+	"name": "redux-store-codegen",
+	"version": "1.0.0",
+	"description": "An easy code generator to auto generate actions/thunk-action-creators/reducers/selectors from a simple store schema definition",
+	"main": "script.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"redux-store-codegen": "./script.js"
+	},
+	"author": "Jabir Barber",
+	"license": "ISC"
 }

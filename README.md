@@ -1,6 +1,6 @@
-## Code Generator for Redux ##
+## Code Generator for Redux
 
-## Prerequsites ##
+## Prerequsites
 
 ```
 npm install -g git+https://github.com/jabirbarber/redux-store-codegen.git
@@ -10,7 +10,7 @@ npm install -g git+https://github.com/jabirbarber/redux-store-codegen.git
 npm install redux react-redux redux-thunk
 ```
 
-## Instructions ##
+## Instructions
 
 1.  cd into the directory you want to create the store in
 2.  create **store.schema.json** file in the directory, each key represents a module, eg.
@@ -45,7 +45,7 @@ npm install redux react-redux redux-thunk
 3.  run script, passing in schema as first parameter
 
 ```
-node script.js ./store.schema.json
+node redux-store-codegen ./store.schema.json
 ```
 
 4.  /store directory will be auto generated, enjoy!
