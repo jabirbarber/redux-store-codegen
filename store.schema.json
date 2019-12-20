@@ -1,0 +1,11 @@
+{
+	"auth": {
+		"user": { "isAsync": true, "asyncVerb": "fetch", "value": {} },
+		"access_token": null,
+		"refresh_token": null
+	},
+	"posts": {
+		"posts": { "isAsync": true, "asyncVerb": "fetch", "value": [] }
+	},
+	"comments": { "comments": null, "likeCount": null }
+}
