@@ -37,13 +37,39 @@ module.exports = function() {
 		};
 	})();
 
+	const validateSchemaErrors = function(path) {
+		let parts = path.split('.');
+		if (!path || !parts.length)
+			return 'Argument 1 Missing: Path to store schema required';
+		let ext = parts[parts.length - 1];
+		if (ext !== 'json') return 'Error: Schema must be a JSON file';
+	};
+
 	// Grab state shape
-	const state_shape_path = process.argv[2];
-	if (!state_shape_path) {
-		exitWithError('Argument 1 Missing: Path to state shape json required');
+	const schema = process.argv[2];
+	const schemaError = validateSchemaErrors(schema);
+	if (schemaError) {
+		return exitWithError(schemaError);
 	}
-	let rawdata = fs.readFileSync(state_shape_path);
+	let rawdata = fs.readFileSync(schema);
 	let shape = JSON.parse(rawdata);
+
+	// Validate schema shape
+	if (!(shape && typeof shape === 'object' && shape.constructor === Object)) {
+		return exitWithError('Error: Schema must be an object');
+	}
+
+	Object.values(shape).map(state => {
+		if (
+			!(
+				state &&
+				typeof state === 'object' &&
+				state.constructor === Object
+			)
+		) {
+			return exitWithError('Error: Module states must be objects');
+		}
+	});
 
 	let mainDir = '/store';
 	if (fs.existsSync(CURRENT_DIR + mainDir)) {
@@ -58,6 +84,7 @@ module.exports = function() {
 	for (const reduxModule in shape) {
 		if (shape.hasOwnProperty(reduxModule)) {
 			const state = shape[reduxModule];
+
 			const moduleDir = `${mainDir}/${reduxModule}`;
 			createDir(moduleDir);
 
