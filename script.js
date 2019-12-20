@@ -21,6 +21,38 @@ module.exports = function() {
 		process.exit(1);
 	};
 
+	const syllableCount = function(word) {
+		word = word.toLowerCase();
+		word = word.replace(/(?:[^laeiouy]|ed|[^laeiouy]e)$/, '');
+		word = word.replace(/^y/, '');
+		var syl = word.match(/[aeiouy]{1,2}/g);
+		if (syl) {
+			return syl.length;
+		}
+	};
+
+	const isVowel = function(c) {
+		return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;
+	};
+
+	const getVerbingFromVerb = function(verb) {
+		verb = verb.toLowerCase();
+		let length = verb.length;
+		let lastLetter = verb[length - 1];
+		let secondLastLetter = verb[length - 2];
+		if (lastLetter == 'e') return verb.substring(0, length - 1) + 'ing';
+		let sylbCount = syllableCount(verb);
+		if (
+			verb &&
+			sylbCount &&
+			isVowel(secondLastLetter) &&
+			!isVowel(lastLetter)
+		) {
+			return verb + lastLetter + 'ing';
+		}
+		return verb + 'ing';
+	};
+
 	const camelCase = (function() {
 		var DEFAULT_REGEX = /[-_]+(.)?/g;
 
@@ -38,9 +70,9 @@ module.exports = function() {
 	})();
 
 	const validateSchemaErrors = function(path) {
+		if (!path) return 'Argument 1 Missing: Path to store schema required';
 		let parts = path.split('.');
-		if (!path || !parts.length)
-			return 'Argument 1 Missing: Path to store schema required';
+		if (!parts || !parts.length) return 'Error: Schema must be a JSON file';
 		let ext = parts[parts.length - 1];
 		if (ext !== 'json') return 'Error: Schema must be a JSON file';
 	};
@@ -156,8 +188,9 @@ export function ${creatorName}(payload) {
 
 					// create reducer switch statements and selectors
 					if (isAsync && verb) {
-						let doing = camelCase(`is-${verb}ing-${a}`);
-						let error = camelCase(`is-${verb}ing-${a}-error`);
+						let verbing = getVerbingFromVerb(verb);
+						let doing = camelCase(`is-${verbing}-${a}`);
+						let error = camelCase(`is-${verbing}-${a}-error`);
 
 						parsedState[a] = (val && val.value) || null;
 						parsedState[doing] = false;

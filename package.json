@@ -1,7 +1,7 @@
 {
 	"name": "redux-store-codegen",
-	"version": "1.0.0",
-	"description": "An easy code generator to auto generate actions/thunk-action-creators/reducers/selectors from a simple store schema definition",
+	"version": "1.0.1",
+	"description": "An easy code generator to auto generate actions, thunk-action-creators, reducers and selectors from a simple store schema definition",
 	"main": "script.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
