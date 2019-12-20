@@ -3,7 +3,7 @@
 ## Prerequsites
 
 ```
-npm install --save-dev redux-store-codegen
+npm install -g redux-store-codegen
 ```
 
 ```
@@ -40,7 +40,7 @@ npm install redux react-redux redux-thunk
 }
 ```
 
-    _Note: If isAsync flag is provided, \_BEGIN, \_SUCCESS, \_FAIL action types will automatically be created along with relevant state flags_
+_Note: If isAsync flag is provided, \_BEGIN, \_SUCCESS, \_FAIL action types will automatically be created along with relevant state flags_
 
 3.  run script, passing in schema as first parameter
 
@@ -50,4 +50,4 @@ node create-redux-store ./store.schema.json
 
 4.  /store directory will be auto generated, enjoy!
 
-    _Note: import your newly created store from /store/store.js in App.js component and wrap with provider as per redux installation guide: <https://react-redux.js.org/introduction/quick-start#provider>_
+_Note: import your newly created store from /store/store.js in App.js component and wrap with provider as per redux installation guide: <https://react-redux.js.org/introduction/quick-start#provider>_
