@@ -3,7 +3,7 @@
 ## Prerequsites ##
 
 ```
-npm install -g  elder-redux-gen
+npm install -g git+https://github.com/jabirbarber/redux-store-codegen.git
 ```
 
 ```
