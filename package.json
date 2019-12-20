@@ -10,5 +10,9 @@
 		"create-redux-store": "cli.js"
 	},
 	"author": "Jabir Barber",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jabirbarber/redux-store-codegen.git"
+	},
 	"license": "ISC"
 }
