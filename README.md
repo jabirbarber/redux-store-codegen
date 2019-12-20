@@ -3,7 +3,7 @@
 ## Prerequsites
 
 ```
-npm install -g git+https://github.com/jabirbarber/redux-store-codegen.git
+npm install --save-dev git+https://github.com/jabirbarber/redux-store-codegen.git
 ```
 
 ```
@@ -45,7 +45,7 @@ npm install redux react-redux redux-thunk
 3.  run script, passing in schema as first parameter
 
 ```
-node redux-store-codegen ./store.schema.json
+node node ./node_modules/redux-store-codegen/script.js ./store.schema.json
 ```
 
 4.  /store directory will be auto generated, enjoy!
