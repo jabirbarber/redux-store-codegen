@@ -200,7 +200,7 @@ export function ${creatorName}(payload) {
 						selectorsContent.push(`
 export const ${selectorPrefix +
 							camelCase(
-								`get-${doing}`
+								`get-${a}`
 							)} = state => state.${reduxModule}.${a};
 export const ${selectorPrefix +
 							camelCase(
