@@ -133,6 +133,8 @@ module.exports = function() {
 				`import ${reduxModule} from './${reduxModule}/reducer';`
 			);
 
+			typesContent.push('export default {');
+
 			actionsContent.push("import actions from './actionTypes';", '');
 
 			for (const a in state) {
@@ -145,20 +147,19 @@ module.exports = function() {
 					// create action types
 					if (isAsync && verb) {
 						typesContent.push(
-							`export const ${actionName}_BEGIN = "${actionName}_BEGIN";`
+							`	${actionName}_BEGIN: "${actionName}_BEGIN",`
 						);
 						typesContent.push(
-							`export const ${actionName}_SUCCESS = "${actionName}_SUCCESS";`
+							`	${actionName}_SUCCESS: "${actionName}_SUCCESS",`
 						);
 						typesContent.push(
-							`export const ${actionName}_FAIL = "${actionName}_FAIL";`
+							`	${actionName}_FAIL: "${actionName}_FAIL",`
 						);
 						typesContent.push('');
 					} else {
 						typesContent.push(
-							`export const ${actionName} = "${actionName}";`
+							`    ${actionName}: "${actionName}",`
 						);
-						typesContent.push('');
 					}
 
 					// create action creators
@@ -253,6 +254,8 @@ export const ${selectorPrefix +
 					}
 				}
 			}
+
+			typesContent.push('}');
 
 			reducerContent.push(`
 import actions from './actionTypes';
