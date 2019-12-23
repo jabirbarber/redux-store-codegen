@@ -1,6 +1,6 @@
 {
 	"name": "redux-store-codegen",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "An easy code generator to auto generate actions, thunk-action-creators, reducers and selectors from a simple store schema definition",
 	"main": "script.js",
 	"scripts": {

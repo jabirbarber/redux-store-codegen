@@ -54,16 +54,16 @@ _Note: import your newly created store from /store/store.js in App.js component 
 
 ## Generated Store Example
 
-![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_ducks.png)
+![alt text](https://raw.githubusercontent.com/jabirbarber/redux-store-codegen/master/assets/preview_ducks.png)
 
 Action Types
-![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_actiontypes.png)
+![alt text](https://raw.githubusercontent.com/jabirbarber/redux-store-codegen/master/assets/preview_actiontypes.png)
 
 Action Creators
-![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_actioncreators.png)
+![alt text](https://raw.githubusercontent.com/jabirbarber/redux-store-codegen/master/assets/preview_actioncreators.png)
 
 Reducers
-![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_reducers.png)
+![alt text](https://raw.githubusercontent.com/jabirbarber/redux-store-codegen/master/assets/preview_reducers.png)
 
 Selectors
-![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_selectors.png)
+![alt text](https://raw.githubusercontent.com/jabirbarber/redux-store-codegen/master/assets/preview_selectors.png)
