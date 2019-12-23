@@ -54,7 +54,6 @@ _Note: import your newly created store from /store/store.js in App.js component 
 
 ## Generated Store Example
 
-File structure
 ![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_ducks.png)
 
 Action Types
