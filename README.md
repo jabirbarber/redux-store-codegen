@@ -45,9 +45,26 @@ _Note: If isAsync flag is provided, \_BEGIN, \_SUCCESS, \_FAIL action types will
 3.  run script, passing in schema as first parameter
 
 ```
-node create-redux-store ./store.schema.json
+create-redux-store ./store.schema.json
 ```
 
 4.  /store directory will be auto generated, enjoy!
 
 _Note: import your newly created store from /store/store.js in App.js component and wrap with provider as per redux installation guide: <https://react-redux.js.org/introduction/quick-start#provider>_
+
+## Generated Store Example
+
+File structure
+![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_ducks.png)
+
+Action Types
+![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_actiontypes.png)
+
+Action Creators
+![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_actioncreators.png)
+
+Reducers
+![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_reducers.png)
+
+Selectors
+![alt text](https://github.com/jabirbarber/redux-store-codegen/blob/master/assets/preview_selectors.png)
